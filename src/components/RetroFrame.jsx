@@ -17,12 +17,14 @@ function CornerOrnament({ className }) {
   )
 }
 
+const bgUrl = `${import.meta.env.BASE_URL}background.jpg`
+
 export default function RetroFrame({ children }) {
   return (
     <div
       className="bg-retro-ink min-h-screen"
       style={{
-        backgroundImage: 'url(/background.jpg)',
+        backgroundImage: `url(${bgUrl})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
