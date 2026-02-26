@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route, Link } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import TypologyPage from './pages/TypologyPage'
 import RulesPage from './pages/RulesPage'
@@ -10,9 +10,9 @@ function NotFound() {
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold">404</h1>
         <p className="mb-4 text-xl text-muted-foreground">Page introuvable</p>
-        <a href="/" className="text-edhuman-blue underline hover:opacity-80">
+        <Link to="/" className="text-edhuman-blue underline hover:opacity-80">
           Retour à l'accueil
-        </a>
+        </Link>
       </div>
     </div>
   )
@@ -20,7 +20,7 @@ function NotFound() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/typologie" element={<TypologyPage />} />
@@ -28,6 +28,6 @@ export default function App() {
         <Route path="/interlocuteurs" element={<InterlocutorsPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
