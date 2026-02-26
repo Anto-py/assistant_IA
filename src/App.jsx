@@ -18,8 +18,19 @@ function NotFound() {
   )
 }
 
+const bgUrl = `${import.meta.env.BASE_URL}background.jpg`
+
 export default function App() {
   return (
+    <div
+      style={{
+        backgroundImage: `url(${bgUrl})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        minHeight: '100vh',
+      }}
+    >
     <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -29,5 +40,6 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </HashRouter>
+    </div>
   )
 }
